@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Missael AI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <!-- Cabecera -->
+    <header class="header">
+      <div class="header-left">
+        <div class="avatar">M</div>
+        <div class="header-info">
+          <h1>Missael AI</h1>
+          <span class="status" id="status">Listo</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Área de mensajes -->
+    <main class="chat" id="chat">
+      <div class="message assistant">
+        <div class="bubble">
+          ¡Hola! Soy <strong>Missael AI</strong>, tu asistente personal.<br>
+          Todavía estoy en construcción, pero ya puedes probar la interfaz.
+        </div>
+      </div>
+    </main>
+
+    <!-- Indicador de escritura -->
+    <div class="typing" id="typing" hidden>
+      <span></span><span></span><span></span>
+    </div>
+
+    <!-- Zona de escritura -->
+    <footer class="input-area">
+      <textarea 
+        id="userInput" 
+        placeholder="Escribe un mensaje..." 
+        rows="1"
+        autocomplete="off"
+      ></textarea>
+      <button id="sendBtn" aria-label="Enviar">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+          <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+        </svg>
+      </button>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
