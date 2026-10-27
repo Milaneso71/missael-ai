@@ -64,10 +64,14 @@ export default {
         const data = await response.json();
 
         if (!response.ok) {
-          return Response.json(
-            { error: "Gemini no pudo responder. Revisa la configuración de la API." },
-            { status: 502, headers: corsHeaders }
-          );
+  const detail = data?.error?.message || "Sin detalles";
+
+  return Response.json(
+    {
+      error: `Gemini API (${response.status}): ${detail}`
+    },
+    { status: 502, headers: corsHeaders }
+  );
         }
 
         const reply =
