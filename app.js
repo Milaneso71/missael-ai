@@ -52,12 +52,15 @@ async function sendMessage() {
       "assistant"
     );
   } catch (error) {
+    const detalle = error instanceof Error
+      ? error.message
+      : "Error desconocido";
+
     addMessage(
-      "No pude conectar con mi cerebro de IA. " +
-      "Comprueba tu conexión e inténtalo de nuevo. " +
-      "Si el problema continúa, revisaremos el servidor.",
+      "Error de MISSAEL AI: " + detalle,
       "assistant"
     );
+
     console.error("Error de MISSAEL AI:", error);
   } finally {
     showTyping(false);
